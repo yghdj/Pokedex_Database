@@ -21,3 +21,9 @@ Get a Pokemon list with Abilities:
 ```sql
 SELECT S.pokedex_number, S.name AS pokemon, A.name AS ability, H.hidden_ability AS hidden FROM Has_ability H JOIN Species S ON H.pokemon_id=S.id JOIN Abilities A ON H.ability_id=A.id;
 ```
+
+Get a list of all moves with targets:
+
+```sql
+SELECT m.name AS name, m.power AS pow, m.pp AS pp, m.category AS cat, m.priority AS prio, m.accuracy AS acc, t.target_description AS target FROM Moves m JOIN Targets t ON m.target = t.id;
+```
